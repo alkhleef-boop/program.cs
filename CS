@@ -1,0 +1,70 @@
+using System;
+
+namespace PackageExpress
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Display the welcome message to the user
+            Console.WriteLine("Welcome to Package Express. Please follow the instructions below.");
+
+            // Ask the user to enter the package weight
+            Console.WriteLine("Please enter the package weight:");
+
+            // Convert the user input into a decimal number and store it
+            decimal weight = Convert.ToDecimal(Console.ReadLine());
+
+            // Check if the package weight is greater than 50
+            if (weight > 50)
+            {
+                // Display an error message if the package is too heavy
+                Console.WriteLine("Package too heavy to be shipped via Package Express. Have a good day.");
+
+                // End the program immediately
+                return;
+            }
+
+            // Ask the user to enter the package width
+            Console.WriteLine("Please enter the package width:");
+
+            // Store the width entered by the user
+            decimal width = Convert.ToDecimal(Console.ReadLine());
+
+            // Ask the user to enter the package height
+            Console.WriteLine("Please enter the package height:");
+
+            // Store the height entered by the user
+            decimal height = Convert.ToDecimal(Console.ReadLine());
+
+            // Ask the user to enter the package length
+            Console.WriteLine("Please enter the package length:");
+
+            // Store the length entered by the user
+            decimal length = Convert.ToDecimal(Console.ReadLine());
+
+            // Add all dimensions together
+            decimal dimensionsTotal = width + height + length;
+
+            // Check if the total dimensions are greater than 50
+            if (dimensionsTotal > 50)
+            {
+                // Display an error message if the package is too large
+                Console.WriteLine("Package too big to be shipped via Package Express.");
+
+                // End the program immediately
+                return;
+            }
+
+            // Calculate the shipping quote
+            // Formula: (width * height * length * weight) / 100
+            decimal quote = (width * height * length * weight) / 100;
+
+            // Display the final shipping quote as currency with 2 decimal places
+            Console.WriteLine("Your estimated total for shipping this package is: $" + quote.ToString("0.00"));
+
+            // Thank the user
+            Console.WriteLine("Thank you!");
+        }
+    }
+}
